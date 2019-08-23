@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>CrawMobi</title>
+        <link rel="icon" href="../static/imagens/icon.png"/>
+    </head>
+    
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img id="logo-principal" src="../static/imagens/icon.png">CrawMobi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{{ url_for('about') }}">Sobre</a>
+                    <a class="nav-item nav-link" href="{{ url_for('help') }}">Ajuda</a>
+                    <a class="nav-item nav-link" href="{{ url_for('contato') }}">Contato</a>
+                </div>
+            </div>
+        </nav>
+
+        <section id="contato">
+            <!-- Footer -->
+            <footer class="page-footer font-small blue-grey lighten-5">
+
+                <div style="background-color: #E8E8E8;">
+                    <div class="container">
+
+                        <!-- Grid row-->
+                        <div class="row py-4 d-flex align-items-center">
+
+                            <!-- Grid column -->
+                            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                                <h6 class="mb-0">Get connected with us on social networks!</h6>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                                <!-- Facebook -->
+                                <a class="fb-ic" href="https://www.facebook.com/kaioiva">
+                                    <i class="fa fa-facebook white-text mr-4"><img src="../static/imagens/icon-face.png"></i>
+                                </a>
+                                <!-- Google +-->
+                                <a class="gplus-ic" href="https://plus.google.com/u/0/115893004863709981071">
+                                    <i class="fa fa-google-plus white-text mr-4"><img src="../static/imagens/icon-g+.png"></i>
+                                </a>
+                                <!--Instagram-->
+                                <a class="ins-ic" href="https://www.instagram.com/kaioiva/?hl=pt-br">
+                                    <i class="fa fa-instagram white-text"><img src="../static/imagens/icon-insta.png"></i>
+                                </a>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row-->
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left mt-5">
+
+                    <!-- Grid row -->
+                    <div class="row mt-3 dark-grey-text">
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+                            <!-- Content -->
+                            <h6 class="text-uppercase font-weight-bold">CrawMobi</h6>
+                            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>Term paper at the Federal University of Viçosa, guided by Professor Dr. Fabrício Aguiar Silva.</p>
+                        </div>
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p><i class="fa fa-home mr-3" ><img id="iconeCntt" src="../static/imagens/end.png"></i> Belo Horizonte, MG, Brazil</p>
+                            <p><i class="fa fa-envelope mr-3"><img id="iconeCntt" src="../static/imagens/email.png"></i> kaioivalves@gmail.com</p>
+                            <p><i class="fa fa-phone mr-3"><img id="iconeCntt" src="../static/imagens/tel.png"></i> +55 31 97310 7094</p>
+                        </div>
+                    </div>
+                    <!-- Grid row -->
+                </div>
+                <!-- Footer Links -->
+
+                <!--Copyright -->
+                <div class="footer-copyright text-center text-black-50 py-3">© 2018 Copyright
+                    <a class="dark-grey-text"> Kaio Alves</a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+        </section>
+
+    </body>
+</html>

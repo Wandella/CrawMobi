@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>CrawMobi</title>
+        <link rel="icon" href="../static/imagens/icon.png"/>
+    </head>
+
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img id="logo-principal" src="../static/imagens/icon.png">CrawMobi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{{ url_for('about') }}">Sobre</a>
+                    <a class="nav-item nav-link" href="{{ url_for('help') }}">Ajuda</a>
+                    <a class="nav-item nav-link" href="{{ url_for('contato') }}">Contato</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron text-center apresentacao" align="center">
+            <section class="text-center my-5">
+
+                <!-- Section heading -->
+                <h2 class="h1-responsive font-weight-bold my-5">O que é o CrawMobi?</h2>
+                <!-- Section description -->
+
+                <p class="lead grey-text w-responsive mx-auto mb-5">
+                    O <strong>CrawMobi</strong> é uma aplicação para obtenção de um conjunto de dados a partir de nomes de modelos dos aparelhos dados como entrada. Obtenha seu conjunto de dados com mais de 20 informações de aparelhos desejados, de maneira simples!
+                    <br><br><a href="/"><img src="../static/imagens/obtencao.png"></a><hr>
+                </p>
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4">
+
+                        <i class="fa fa-area-chart fa-3x red-text"></i>
+                        <h5 class="font-weight-bold my-4">Robusta <img src="../static/imagens/robusta.png"></h5>
+                        <p class="grey-text mb-md-0 mb-5">
+                            As fontes utilizadas para obtenção dos dados são confiáveis e bem conhecidas no ambiante virtual, no que diz respeito a comparação de smartphones. São analisados os dados de cada fonte e a aplicação decide qual o mais confiável para compor sua base de dados. A lista de sites é composta basicamente de três sites: <a href="https://www.kimovil.com/pt/">Kimovil</a>, <a href="https://www.phonearena.com/">PhoneArena</a> e <a href="https://www.gsmarena.com/">GSMArena</a>. Para o preço ser mais realista e acompanhar a realidade dos valores na moeda local, o site utilizado para sua obtenção é o <a href="https://www.zoom.com.br/">Zoom</a>, pegando o menor preço disponível no país.
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4">
+
+                        <i class="fa fa-book fa-3x cyan-text"></i>
+                        <h5 class="font-weight-bold my-4">Confiável <img src="../static/imagens/confiavel.png"></h5>
+                        <p class="grey-text mb-md-0 mb-5">
+                            As fontes utilizadas para obtenção dos dados são confiáveis e bem conhecidas no ambiante virtual, no que diz respeito a comparação de smartphones. São analisados os dados de cada fonte e a aplicação decide qual o mais confiável para compor sua base de dados. A lista de sites é composta basicamente de três sites: <a href="https://www.kimovil.com/pt/">Kimovil</a>, <a href="https://www.phonearena.com/">PhoneArena</a> e <a href="https://www.gsmarena.com/">GSMArena</a>. Para o preço ser mais realista e acompanhar a realidade dos valores na moeda local, o site utilizado para sua obtenção é o <a href="https://www.zoom.com.br/">Zoom</a>, pegando o menor preço disponível no país.
+
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4">
+                        <i class="fa fa-comments-o fa-3x orange-text"></i>
+                        <h5 class="font-weight-bold my-4">Útil <img src="../static/imagens/util.png"></h5>
+                        <p class="grey-text mb-0">
+                            Com a base de dados do <strong>Smartphone Description</strong> em mãos, voce poderá realizar analises dos dados, nela contida, para diversas finalidades.
+                            <br><br><br><img src="../static/imagens/analises.png" style="width:80px">
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </section>
+
+        </div>
+    </body>
+</html>

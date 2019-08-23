@@ -1,0 +1,46 @@
+#logo-principal {
+    height: 30px;
+}
+
+#tituloPrincipal {
+    text-align:center;
+    padding-bottom: 50px;
+}
+
+#imagem-body {
+    height: 200px;
+}
+
+.lead {
+    padding-top:30px;
+}
+
+#iconeCntt {
+    height: 20px;
+}
+
+#criaBorda{
+    border:2px solid red;
+}
+
+#instrucoes{
+    padding-top: 35px;
+}
+
+#exemplo{
+    padding: 15px;
+    text-align:center;
+    width: 60%;
+    height: 60%
+}
+
+#exemplo2{
+    padding-bottom: 15px;
+    width:70%;
+    height:70%;
+}
+
+#gif{
+    width:15%;
+    height:15%;
+}

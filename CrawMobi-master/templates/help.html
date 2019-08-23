@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>CrawMobi</title>
+        <link rel="icon" href="../static/imagens/icon.png"/>
+    </head>
+
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img id="logo-principal" src="../static/imagens/icon.png">CrawMobi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{{ url_for('about') }}">Sobre</a>
+                    <a class="nav-item nav-link" href="{{ url_for('help') }}">Ajuda</a>
+                    <a class="nav-item nav-link" href="{{ url_for('contato') }}">Contato</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="text-center apresentacao" align="center">
+                <section class="text-center my-5">
+                    <h2 class="h1-responsive font-weight-bold my-5">Como usar o CrawMobi?</h2>
+                </section>
+                <p class="lead grey-text w-responsive mx-auto mb-5">
+                    Siga as instruções para conseguir facilmente sua base de dados
+                    <br><br><hr>
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>Crie um arquivo no formato "xls", ou seja, uma tabela contento os nomes comerciais dos smartphones listadando-os na primeira coluna, linha após linha, do arquivo. Para funcionamento perfeito do sistema, a primeira linha deste arquivo deve conter a palavra "Comercial" seguida nas próximas linhas dos nomes dos aparelhos. Veja este exemplo de como portar:</p>
+                            <div class="row justify-content-md-center">
+                                <img src="../static/imagens/exemplo1.png" id="exemplo">
+                            </div>
+                        <p>Vale ressaltar que a palavras "Marca" e "Modelo" se referem respectivamente a marca e o modelo dos aparelhos desejados.</p>
+                    </div>
+                    <div class="col">
+                        <p>Depois da criação do arquivo o salve com o nome de "ListaSmartphones" no formato "xls" e faça o upload na aplicação clicando primeiro em "Browse" para escolher o arquivo. Desta forma teremos a situação abaixo:</p>
+                            <div class="row justify-content-md-center">
+                                <img src="../static/imagens/exemplo2.png" id="exemplo2">
+                            </div>
+                        <p>Assim feito, pressione o botão upload para começar o serviço.</p>
+                        <p>Sera exibido um modal mostrando que a aplicação está trabalhando. É importante frizar que aplicação consulta alguns sites, portanto leva um tempo considerável para realização da tarefa. Tal tempo gira em torno de <strong>3 minutos para cada 10 aprelhos</strong>. Após a conclusão dos trabalhos a navegação será direcionada para uma página mostrando que está tudo pronto para o download da base de dados. Clicando na imagem <img src="../static/imagens/csv_down.png"> será baixado um arquivo zip contendo sua base de dados, no formato '<i>csv</i>' e um arquivo log no formato '<i>txt</i>' contendo os registros da execução do programa.</p>
+                    </div>
+                </div>
+                <hr>
+                <small class="form-text text-muted">
+                    Observações:<br><p>Aparelhos com mais de dois anos de uso possivelmente não terão seus preços encontrados, pois não há mais lojas comercializando o mesmo. Caso ocorra alguma incidência de aparelhos com está característica na lista desejada, será informado no arquivo de registros da execução do programa.</p><p>O tempo de execução do programa pode ser muito alto dependo da quantidade de aparelhos dados como entrada.</p>
+                </small>
+                <hr>
+            </div>
+
+            <br>
+            <div class="row justify-content-md-center">
+                <h5>Comece agora fazendo o upload do seu arquivo!</h5><a href="/"><img src="../static/imagens/csv_down.png" style="padding-left: 15px;"></a>
+            </div>
+
+        </div>
+    </body>
+</html>

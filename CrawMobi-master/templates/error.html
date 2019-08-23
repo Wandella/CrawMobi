@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <title>CrawMobi</title>
+        <link rel="icon" href="../static/imagens/icon.png"/>
+    </head>
+
+    <body>
+	    <!--Navbar-->
+	    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	        <a class="navbar-brand" href="/"><img id="logo-principal" src="../static/imagens/icon.png">CrawMobi</a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	            <div class="navbar-nav">
+	                <a class="nav-item nav-link" href="{{ url_for('about') }}">Sobre</a>
+	                <a class="nav-item nav-link" href="{{ url_for('help') }}">Ajuda</a>
+	                <a class="nav-item nav-link" href="{{ url_for('contato') }}">Contato</a>
+	            </div>
+	        </div>
+	    </nav>
+
+	    <div class="jumbotron">
+		   	<div class="row justify-content-md-center">
+	   			<div class=" row justify-content-md-center">
+					<img src="../static/imagens/erro.png">
+				</div>
+	   			<p class="lead grey-text w-responsive mx-auto mb-5">
+		   			Algo deu errado! Por algum motivo, como falta de internet no servidor, o processo foi interrompido. Alguns dados podem ter sidos salvos. Faça o download de seu arquivo clicando na imagem abaixo:
+					<div class=" row justify-content-md-center">
+						<a href="{{ url_for('return_files') }}" target="blank">
+							<img src="../static/imagens/csv_down.png">
+						</a>
+					</div>
+				</p>
+		   	</div>
+
+		   	<br>
+		   	<hr>
+
+		   	<div class="row justify-content-md-center">
+		   		<p class="lead grey-text w-responsive mx-auto mb-5">
+		   			Deseja fazer outra consulta?
+					<a href="/" target="blank">
+						<img src="../static/imagens/restart.png">
+					</a>
+				</p>
+		   	</div>
+		</div>
+</body>
+</html>
