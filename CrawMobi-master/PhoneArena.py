@@ -23,7 +23,7 @@ class phoneArena:
 		link = 'https://www.phonearena.com/'
 
 		# Navegadores abertos para pesquisa do elementos
-		driver = webdriver.Chrome('/home/wandella/Documentos/CrawMobi-master/chromedriver')
+		driver = webdriver.Chrome('/home/wandella/Documentos/CrawMobi/CrawMobi-master/chromedriver')
 		driver.get(link)
 		
 		celular = Celular.celular()
@@ -39,11 +39,11 @@ class phoneArena:
 			except Exception:
 				principal_cel1 = driver.find_element_by_xpath('//*[@id="search-phones"]/div[3]/div[1]/div/a/section/p').text
 				
-				print("Primeiro card",principal_cel1)
+				#print("Primeiro card",principal_cel1)
 				if aparelho == principal_cel1.upper():
-					print("P Achei 1")
+					#print("P Achei 1")
 					driver.find_element_by_xpath('//*[@id="search-phones"]/div[3]/div[1]/div/a').click()
-					print("P Cliquei no 1")
+					#print("P Cliquei no 1")
 					getValuePhoneArena(aparelho, driver, celular)
 					return celular
 				else:
@@ -51,9 +51,9 @@ class phoneArena:
 				
 				print("Segundo card",principal_cel2)
 				if aparelho == principal_cel2.upper():
-					print("P Achei 2")
+					#print("P Achei 2")
 					driver.find_element_by_xpath('//*[@id="search-phones"]/div[3]/div[2]/div/a').click()
-					print("P cliquei 2")
+					#print("P cliquei 2")
 					getValuePhoneArena(aparelho, driver, celular)
 					return celular
 				else:
@@ -248,12 +248,12 @@ class phoneArena:
 				celular.setTela('')
 			
 			try:
-				print("Phonearena entrei no SO")
+				#print("Phonearena entrei no SO")
 				#SO = driver.find_element_by_xpath('//*[@id="design_cPoint"]/ul/li[2]/ul/li').text
 				try:
-					print("Caso 1 para pegar SO")
+					#print("Caso 1 para pegar SO")
 					SO = driver.find_element_by_xpath('//*[@id="hardware_cPoint"]/div[7]/div/div[2]').text
-					print("Sistema",SO)
+					#print("Sistema",SO)
 					if (SO.find('Android') > -1) | (SO.find('iOS') > -1):
 						
 						celular.setSo(SO.split(' ')[0])
@@ -270,7 +270,8 @@ class phoneArena:
 							celular.setSo('')
 							
 			except Exception:
-				worksheet.write(linha + 1, 15, '')
+				celular.setSo('')
+				#worksheet.write(linha + 1, 15, '')
 			
 			#Arrumar depois, pois está uma bagunça
 			""" try:

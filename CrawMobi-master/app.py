@@ -5,7 +5,7 @@ import Crawler
 
 #Adaptação para funcionar no meu notebook
 #UPLOAD_FOLDER = '/home/kaio/Desktop/UFV/POC/Repositório/analise-usuarios/Crawlers/Flask/'
-UPLOAD_FOLDER = '/home/wandella/Documentos/CrawMobi-master/'
+UPLOAD_FOLDER = '/home/wandella/Documentos/CrawMobi/CrawMobi-master/'
 ALLOWED_EXTENSIONS = {'xls'}
 
 app = Flask(__name__)
@@ -73,7 +73,7 @@ def return_files():
     try:
         #Modificação feita para funcionar na maquina da wandella
         #return send_file('/home/kaio/Desktop/UFV/POC/Repositório/analise-usuarios/Crawlers/Flask/gettingDatabase.zip',
-        return send_file('/home/wandella/Documentos/CrawMobi-master/gettingDatabase.zip',
+        return send_file('/home/wandella/Documentos/CrawMobi/CrawMobi-master/gettingDatabase.zip',
                          attachment_filename='gettingDatabase.zip', as_attachment=True)
     except Exception as e:
         return str(e)

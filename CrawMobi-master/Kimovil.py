@@ -24,7 +24,7 @@ class kimovil:
 		link = 'https://www.kimovil.com/pt/comparar-celulares'
 
 		# Navegadores abertos para pesquisa do elementos
-		driver = webdriver.Chrome('/home/wandella/Documentos/CrawMobi-master/chromedriver')
+		driver = webdriver.Chrome('/home/wandella/Documentos/CrawMobi/CrawMobi-master/chromedriver')
 		driver.get(link)
 		
 		celular = Celular.celular()
@@ -411,8 +411,9 @@ class kimovil:
 		pesquisa.send_keys(Keys.ENTER)
 		escolhe(self.aparelho, driver, celular, link)
 
+		print("Indo chamar o zoom")
 		preço = Zoom.zoom(self.aparelho)
-
+		print("Indo pesquisar o preco")
 		celular.setPreco(preço.preçoZoom())
 
 		driver.close()

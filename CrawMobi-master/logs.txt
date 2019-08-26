@@ -2,9 +2,8 @@ Smartphones Description - Getting Database
 
 Execution logs:
 
-O preço do aparelho APPLE IPHONE 7 não foi encontrado no site: https://www.zoom.com.br/celular
-Houve divergência de valores no aparelho Apple iPhone 7. Memória de Armazenamento no Kimovil: 128. Memória de Armazenamento no phoneArena: 256.
-O valor para Memória de Armazenamento escolhido foi do site Kimovil por ser o menor entre os dois.
+Houve divergência de valores no aparelho Apple iPhone 7. Memória de Armazenamento no Kimovil: 32. Memória de Armazenamento no phoneArena: 256.
+O valor para Memória de Armazenamento escolhido foi do site PhoneArena por ser o menor entre os dois.
 
 Houve divergência de valores no aparelho Apple iPhone 7. NFC no Kimovil: SIM. NFC no phoneArena: NAO.
 O valor para NFC escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
@@ -34,73 +33,38 @@ O valor para o Processamento escolhido foi do site Kimovil por possuir uma base 
 Houve divergência de valores no aparelho Apple iPhone 7. Data de lançamento no Kimovil: 09/2016. Data de lançamento no phoneArena: Sep 16, 2016.
 O valor para a data de lançamento escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-O preço do aparelho MOTOROLA MOTO X PLAY não foi encontrado no site: https://www.zoom.com.br/celular
-Houve divergência de valores no aparelho Motorola Moto X Play. Memória de Armazenamento no Kimovil: 16. Memória de Armazenamento no phoneArena: 32.
-O valor para Memória de Armazenamento escolhido foi do site Kimovil por ser o menor entre os dois.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. Dual Chip no Kimovil: NAO. Dual Chip no phoneArena: .
-O valor para Dual Chip escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. LTE(4G) no Kimovil: SIM. LTE(4G) no phoneArena: NAO.
-O valor para LTE(4G) escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. Resolução da Câmera no Kimovil: 21.5. Resolução da Câmera no phoneArena: 21.
-O valor para a Resolução da Câmera escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. Peso no Kimovil: 169. Peso no phoneArena: .
-O valor para peso escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. Dimensões no Kimovil: 75.0x148.0x10.9. Dimensões no phoneArena: .
-O valor para as Dimensões escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. Tela no Kimovil: 5.5. Tela no phoneArena: .
-O valor para o tamanho do Tela escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. SO no Kimovil: Android. SO no phoneArena: .
-O valor para o SO escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. Processamento no Kimovil: 1.7. Processamento no phoneArena: .
-O valor para o Processamento escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Motorola Moto X Play. Data de lançamento no Kimovil: 07/2015. Data de lançamento no phoneArena: Aug 1, 2015.
-O valor para a data de lançamento escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-O preço do aparelho APPLE IPHONE 8 PLUS não foi encontrado no site: https://www.zoom.com.br/celular
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Bateria no Kimovil: 2675. Bateria no phoneArena: 2691.
-O valor para bateria escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
-
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Memória de Armazenamento no Kimovil: 64. Memória de Armazenamento no phoneArena: 256.
+Houve divergência de valores no aparelho Apple iPhone Xr. Memória de Armazenamento no Kimovil: 64. Memória de Armazenamento no phoneArena: 256.
 O valor para Memória de Armazenamento escolhido foi do site PhoneArena por ser o menor entre os dois.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. NFC no Kimovil: SIM. NFC no phoneArena: NAO.
+Houve divergência de valores no aparelho Apple iPhone Xr. NFC no Kimovil: SIM. NFC no phoneArena: NAO.
 O valor para NFC escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Dual Chip no Kimovil: NAO. Dual Chip no phoneArena: .
+Houve divergência de valores no aparelho Apple iPhone Xr. Dual Chip no Kimovil: NAO. Dual Chip no phoneArena: .
 O valor para Dual Chip escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. LTE(4G) no Kimovil: SIM. LTE(4G) no phoneArena: NAO.
+Houve divergência de valores no aparelho Apple iPhone Xr. LTE(4G) no Kimovil: SIM. LTE(4G) no phoneArena: NAO.
 O valor para LTE(4G) escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Resolução da Câmera no Kimovil: 12.2. Resolução da Câmera no phoneArena: 12.
+Houve divergência de valores no aparelho Apple iPhone Xr. Resolução da Câmera no Kimovil: 12.2. Resolução da Câmera no phoneArena: 12.
 O valor para a Resolução da Câmera escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Peso no Kimovil: 202. Peso no phoneArena: .
+Houve divergência de valores no aparelho Apple iPhone Xr. Peso no Kimovil: 194. Peso no phoneArena: .
 O valor para peso escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Dimensões no Kimovil: 78.1x158.4x7.5. Dimensões no phoneArena: .
+Houve divergência de valores no aparelho Apple iPhone Xr. Dimensões no Kimovil: 75.7x150.9x8.3. Dimensões no phoneArena: .
 O valor para as Dimensões escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Tela no Kimovil: 5.5. Tela no phoneArena: .
+Houve divergência de valores no aparelho Apple iPhone Xr. Tela no Kimovil: 6.1. Tela no phoneArena: .
 O valor para o tamanho do Tela escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. SO no Kimovil: iOS. SO no phoneArena: GALLERY
+Houve divergência de valores no aparelho Apple iPhone Xr. SO no Kimovil: iOS. SO no phoneArena: GALLERY
 iOS.
 O valor para o SO escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Processamento no Kimovil: 2.4. Processamento no phoneArena: .
+Houve divergência de valores no aparelho Apple iPhone Xr. Processamento no Kimovil: 2.5. Processamento no phoneArena: .
 O valor para o Processamento escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
-Houve divergência de valores no aparelho Apple iPhone 8 Plus. Data de lançamento no Kimovil: 09/2017. Data de lançamento no phoneArena: Sep 22, 2017.
+Houve divergência de valores no aparelho Apple iPhone Xr. Data de lançamento no Kimovil: 09/2018. Data de lançamento no phoneArena: Oct 26, 2018.
 O valor para a data de lançamento escolhido foi do site Kimovil por possuir uma base de dados mais confiável.
 
 A maioria dos dados escolhidos foram do site Kimovil por possuir uma base de dados mais extensa.
