@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy
 import selenium
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -44,45 +45,36 @@ class kimovil:
 				log.close()
 				return celular
 
-			#print("Escolhendo card kimovil")
 			#Olha o primeiro card para verificar se é o celular que procuramos
 			principal_cel1 = driver.find_element_by_xpath('//*[@id="results-list"]/li[1]/div/a[2]/div[2]/div[1]').text
 			principal_cel1 = principal_cel1.upper()
-			#print("K aparelho",aparelho)
-			#print("K ",principal_cel1)
+			
 			#Se for o celular encontrado, esta condição permite o clique sobre o card
 			if aparelho == principal_cel1:
-				#print("K Achei 1")
 				driver.find_element_by_xpath('//*[@id="results-list"]/li[1]/div/a[2]').click()
-				#print("K cliquei 1")
 				getValueKimovil(aparelho, driver, celular) 
 				return celular
 			else:
 				principal_cel2 = driver.find_element_by_xpath('//*[@id="results-list"]/li[2]/div/a[2]/div[2]/div[1]').text
 				principal_cel2 = principal_cel2.upper()
-				#print("K aparelho",aparelho)
-				#print("K ",principal_cel2)
+	
 			if aparelho == principal_cel2:
-				#print("K Achei 2")
 				driver.find_element_by_xpath('//*[@id="results-list"]/li[2]/div/a[2]').click()
-				#print("K cliquei 2")
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:        
 				principal_cel3 = driver.find_element_by_xpath('//*[@id="results-list"]/li[3]/div/a[2]/div[2]/div[1]').text
 				principal_cel3 = principal_cel3.upper()
-				#print("K aparelho",aparelho)
-				#print("K ",principal_cel3)
+				
 			if aparelho == principal_cel3:
-				#print("K Achei 3")
 				driver.find_element_by_xpath('//*[@id="results-list"]/li[3]/div/a[2]').click()
-				#print("K cliquei 3")
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:        
 				print("No 4")
 				principal_cel4 = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]').text
 				principal_cel4 = principal_cel4.upper()
+				
 			if aparelho == principal_cel4:        
 				driver.find_element_by_xpath('//*[@id="results-list"]/li[4]/div/a[2]').click()        
 				getValueKimovil(aparelho, driver, celular)
@@ -91,6 +83,7 @@ class kimovil:
 				principal_cel5 = driver.find_element_by_xpath('//*[@id="results-list"]/li[5]/div/a[2]/div[2]/div[1]').text
 				principal_cel5 = principal_cel5.upper()
 				print("Cheguei até aqui",principal_cel5)
+
 			if aparelho == principal_cel5:
 				print("Foi",principal_cel5)
 				driver.find_element_by_xpath('//*[@id="results-list"]/li[5]/div/a[2]').click()
@@ -98,10 +91,11 @@ class kimovil:
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
-				principal_cel6 = driver.find_element_by_xpath('//*[@id="results-list"]/li[6]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel6 = driver.find_element_by_xpath('//*[@id="results-list"]/li[6]/div/a[2]/div[2]/div[1]').text
+				principal_cel6 = principal_cel6.upper()
 
-			if aparelho == principal_cel6.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[6]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel6:
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[6]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
@@ -298,15 +292,17 @@ class kimovil:
 				celular.setSo('')
 
 			#Arrumar depois, pois está uma bagunça
-			""" try:
+			try:
+				print("Versão")
 				#Versao_SO = driver.find_element_by_xpath('//*[@id="software"]/div/div[1]/div[2]/dl/dd/p/small').text #Kimovil
-				Versao_SO = driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[5]/section[8]/div/dl/dd').text #Kimovil
-				temp = Versao_SO.split('')[1]
-				print("Versao SO", temp.split('\n')[0])	
-				celular.setVersaoSo(temp.split('\n')[0])
+				Versao_SO = driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[5]/section[8]/div/dl/dd/div').text #Kimovil
+				print("Versao Bruto",Versao_SO)
+				temp = Versao_SO.split(' ')[1]
+				print("Versao SO", temp)	
+				celular.setVersaoSo(temp)
 			except Exception:
 				celular.setVersaoSo('')
- """
+
 			try:
 				Processamento = driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[5]/section[3]/div[1]/dl[1]/dd[4]').text
 				proc_temp = Processamento.split(" ")[0]
@@ -340,7 +336,7 @@ class kimovil:
 			try:
 				Avaliacao_site = driver.find_element_by_xpath('//*[@id="sec-datasheet"]/li[1]/div/div[1]/div[2]/span').text #Kimovil
 				#print("AV Site",Avaliacao_site)
-				if (Avaliacao_site == 'Não preço,\nnão Ki'):
+				if Avaliacao_site.find('Não preço')>-1:
 					celular.setAvaliacaoSite('')
 
 				celular.setAvaliacaoSite(Avaliacao_site)
@@ -409,12 +405,14 @@ class kimovil:
 		pesquisa = driver.find_element_by_xpath('//*[@id="js_global-search-input"]')
 		pesquisa.send_keys(self.aparelho)
 		pesquisa.send_keys(Keys.ENTER)
+		#WebDriverWait(driver, 3)
 		escolhe(self.aparelho, driver, celular, link)
 
 		print("Indo chamar o zoom")
 		preço = Zoom.zoom(self.aparelho)
-		print("Indo pesquisar o preco")
-		celular.setPreco(preço.preçoZoom())
+		teste = preço.preçoZoom()
+		print("Preço Kimovil->",teste)
+		celular.setPreco(teste)
 
 		driver.close()
 

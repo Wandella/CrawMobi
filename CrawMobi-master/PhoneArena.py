@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy
 import selenium
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -358,7 +359,7 @@ class phoneArena:
 		pesquisa = driver.find_element_by_xpath('/html/body/div[1]/header/nav[2]/div/div[1]/div[2]/div[2]/div/form/div/input')
 		pesquisa.send_keys(self.aparelho)
 		pesquisa.send_keys(Keys.ENTER)
-
+		#WebDriverWait(driver, 3)
 		escolhe(self.aparelho, driver, celular, link)
 
 		driver.close()

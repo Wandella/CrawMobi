@@ -37,9 +37,10 @@ class zoom:
 			pesquisado1 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[1]/div[2]/h2/a').text
 			print("Celular pesquisado ->",pesquisado1)
 			pesquisado1 = pesquisado1.upper()
+
 			if pesquisado1.find(aparelho)>-1:
 				print("zoom Achei 1",pesquisado1)
-				driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[1]/div[2]').click()
+				#driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[1]/div[2]').click()
 				print("Preço")
 				#Preço = driver.find_element_by_xpath('//*[@id="productInfo"]/div/div[2]/p/span[2]/a/strong').text #Kimovil
 				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[1]/div[3]/span[2]/a[1]').text #Kimovil
@@ -50,27 +51,53 @@ class zoom:
 				pesquisado2 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[2]/div[2]/h2/a').text
 				pesquisado2 = pesquisado2.upper()
 				print("zomm aparelho",pesquisado2)
+
 			if pesquisado2.find(aparelho)>-1:
 				print("zoom Achei 2",pesquisado2)
-				#driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[2]/div[2]').click()
 				print("Preço")
-				#Preço = driver.find_element_by_xpath('//*[@id="productInfo"]/div/div[2]/p/span[2]/a/strong').text #Kimovil
 				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[2]/div[3]/span[2]/a[1]').text #Kimovil
 				print(Preço)
 				return Preço
-				
-			
+			else:
+				pesquisado3 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[2]/h2').text
+				pesquisado3 = pesquisado3.upper()
+				print("zomm aparelho",pesquisado2)
+
+			if pesquisado3.find(aparelho)>-1:
+				print("zoom Achei 3",pesquisado3)
+				print("Preço")
+				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[3]/span[2]/a[1]').text #Kimovil
+				print(Preço)
+				return Preço
+			else:
+				pesquisado4 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[2]/h2').text
+				pesquisado4 = pesquisado3.upper()
+				print("zomm aparelho",pesquisado4)
+
+			if pesquisado4.find(aparelho)>-1:
+				print("zoom Achei 4",pesquisado4)
+				print("Preço")
+				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[3]/span[2]/a[1]').text #Kimovil
+				print(Preço)
+				return Preço
 			
 		# Função que complementa a função escolheCard(), vendo de qual marca é o aparelho para comparação
-		def completaEscolheCard(aparelho, pesquisado):
+		def completaEscolheCard(aparelho):
 			print("Zoom completando card")
-			if (aparelho.split(' ')[0] == 'APPLE'):
-				if ((len(pesquisado) - (len(aparelho)+11+5)) < 2):
-					return True
-				else:
-					return False
+			if aparelho.find('APPLE')>-1:
+				var = aparelho.replace("APPLE", "")
+				return var
+			elif aparelho.find('MOTOROLA')>-1:
+				print("Caso Motorola")
+				var = aparelho.replace("MOTOROLA", "")
+				var = var.replace("MOTO", "MOTO G")
+				print(var)
+				return var
+			else:
+				return aparelho
+				
 			
-			if (aparelho.split(' ')[0] == 'MOTOROLA'):
+			""" if (aparelho.split(' ')[0] == 'MOTOROLA'):
 				if ((len(pesquisado) - (len(aparelho)+11+5+7+2)) < 2):
 					return True
 				else:
@@ -82,12 +109,13 @@ class zoom:
 				else:
 					return False
 			
-			return True
+			return True """
 		# Fim das funções!
 					
 		print("Cheguei até aqui no try")
 		try:
-			print("Vou pesquisar o celular")	
+			print("Vou pesquisar o celular")
+			self.aparelho = completaEscolheCard(self.aparelho)	
 			pesquisa = driver.find_element_by_xpath('//*[@id="header"]/div/div[2]/div/form/div[1]/div/input')
 			pesquisa.send_keys(self.aparelho)
 			pesquisa.send_keys(Keys.ENTER)

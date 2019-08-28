@@ -13,10 +13,10 @@ class comparador:
 		# Função para escrita no dataFrame
 		
 		worksheet.write(linha + 1, 0, cel1.getMarca())
-		print("Marca do cel 1",cel1.getMarca())
-		print("Marca do cel 2",cel2.getMarca())
+		#print("Marca do cel 1",cel1.getMarca())
+		#print("Marca do cel 2",cel2.getMarca())
 		if (cel2.getMarca()):
-			print("Marca Phonearena")
+			#print("Marca Phonearena")
 			worksheet.write(linha + 1, 2, cel2.getMarca())
 
 			""" log = open('logs.txt', 'a')
@@ -24,14 +24,14 @@ class comparador:
 			log.write('O valor para bateria escolhido foi do site Kimovil por possuir uma base de dados mais confiável.\n\n')
 			log.close() """
 		else:
-			print("Marca kimovil")
+			#print("Marca kimovil")
 			worksheet.write(linha + 1, 2, cel1.getMarca())
 
 		worksheet.write(linha + 1, 1, cel1.getModelo())
-		print("Moodelo do cel 1",cel1.getModelo())
-		print("Modelo do cel 2",cel2.getModelo())
+		#print("Moodelo do cel 1",cel1.getModelo())
+		#print("Modelo do cel 2",cel2.getModelo())
 		if (cel2.getModelo()):
-			print("Modelo Phonearena")
+			#print("Modelo Phonearena")
 			worksheet.write(linha + 1, 2, cel2.getModelo())
 
 			""" log = open('logs.txt', 'a')
@@ -39,12 +39,12 @@ class comparador:
 			log.write('O valor para bateria escolhido foi do site Kimovil por possuir uma base de dados mais confiável.\n\n')
 			log.close() """
 		else:
-			print("Modelo kimovil")
+			#print("Modelo kimovil")
 			worksheet.write(linha + 1, 2, cel1.getModelo())
 
 		
 		if (cel1.getBateria() != cel2.getBateria()):
-			print("Case 1 bateria")
+			#print("Case 1 bateria")
 			worksheet.write(linha + 1, 2, cel1.getBateria())
 
 			log = open('logs.txt', 'a')
@@ -52,7 +52,7 @@ class comparador:
 			log.write('O valor para bateria escolhido foi do site Kimovil por possuir uma base de dados mais confiável.\n\n')
 			log.close()
 		else:
-			print("Bateria foi")
+			#print("Bateria foi")
 			worksheet.write(linha + 1, 2, cel1.getBateria())
 
 
@@ -193,7 +193,7 @@ class comparador:
 			worksheet.write(linha + 1, 13, cel1.getSo())
 			
 
-		""" if (cel1.getVersaoSo() != ''):
+		if (cel1.getVersaoSo() != ''):
 			print("Cel 1 Versao SO",cel1.getVersaoSo())
 			worksheet.write(linha + 1, 14, cel1.getVersaoSo())
 		elif (cel2.getVersaoSo() != ''):
@@ -203,7 +203,7 @@ class comparador:
 		if (cel2.getVersaoSo() != ''):
 			log = open('logs.txt', 'a')
 			log.write('O valor para a Versão do SO escolhido foi do site PhoneArena por possuir essa informação mais confiável.\n\n')
-			log.close() """
+			log.close()
 
 		if (cel1.getProcessamento() != cel2.getProcessamento()):
 			
@@ -230,10 +230,23 @@ class comparador:
 		else:
 			worksheet.write(linha + 1, 18, cel1.getDataLancamento())
 
-		if cel2.getPreco != '':
-			worksheet.write(linha + 1, 19, cel2.getPreco())
-		elif cel1.getPreco() != '':
+		if cel1.getPreco() != None:
+			print("Escrevendo Preço caso1", cel1.getPreco())
 			worksheet.write(linha + 1, 19, cel1.getPreco())
+		else:
+			print("Escrevendo Preço caso3", cel1.getPreco())
+			worksheet.write(linha + 1, 19, None)
 		
-		worksheet.write(linha + 1, 20, cel1.getAvaliacaoSite())
-		worksheet.write(linha + 1, 21, cel1.getAvaliacaoUsu())
+		#Inserir avaliação do site
+		avaliacao_site = cel1.getAvaliacaoSite()
+		if avaliacao_site.isdigit() == False:
+			worksheet.write(linha + 1, 20,avaliacao_site)
+		else:
+			worksheet.write(linha + 1, 20,None)
+		
+		#Inserir avaliação do usuario
+		avaliacao_usuario = cel1.getAvaliacaoUsu()
+		if avaliacao_usuario.isdigit() == False:
+			worksheet.write(linha + 1, 21,avaliacao_usuario)
+		else:
+			worksheet.write(linha + 1, 21,None)

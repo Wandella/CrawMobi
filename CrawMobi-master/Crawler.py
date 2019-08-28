@@ -39,7 +39,7 @@ class crawler:
 		worksheet.write(0, 9, 'Resolução da Câmera (Mpx)')
 		worksheet.write(0, 10, 'Peso (g)')        
 		worksheet.write(0, 11, 'Dimensões')        
-		worksheet.write(0, 12, 'Tamanho da Tela (")')        
+		worksheet.write(0, 12, 'Tamanho da Tela')        
 		worksheet.write(0, 13, 'Sistema Operacional')        
 		worksheet.write(0, 14, 'Versão SO')        
 		worksheet.write(0, 15, 'Processamento (GHz)')        
@@ -73,9 +73,7 @@ class crawler:
 					kim = Kimovil.kimovil(aparelho)
 					pha = PhoneArena.phoneArena(aparelho)
 					cel1 = kim.executa()
-					#print("Kimovil executou")
 					cel2 = pha.executa()
-					#print("Phonearena executou")
 					compara.armazena(cel1, cel2, linha, worksheet)
 					print("Fim")
 				except Exception:
