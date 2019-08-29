@@ -73,7 +73,7 @@ class crawler:
 					kim = Kimovil.kimovil(aparelho)
 					pha = PhoneArena.phoneArena(aparelho)
 					cel1 = kim.executa()
-					cel2 = pha.executa()
+					#cel2 = pha.executa()
 					compara.armazena(cel1, cel2, linha, worksheet)
 					print("Fim")
 				except Exception:

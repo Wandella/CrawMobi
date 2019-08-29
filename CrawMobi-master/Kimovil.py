@@ -27,6 +27,7 @@ class kimovil:
 		# Navegadores abertos para pesquisa do elementos
 		driver = webdriver.Chrome('/home/wandella/Documentos/CrawMobi/CrawMobi-master/chromedriver')
 		driver.get(link)
+		WebDriverWait(driver, 3)
 		
 		celular = Celular.celular()
 		
@@ -57,7 +58,8 @@ class kimovil:
 			else:
 				principal_cel2 = driver.find_element_by_xpath('//*[@id="results-list"]/li[2]/div/a[2]/div[2]/div[1]').text
 				principal_cel2 = principal_cel2.upper()
-	
+				print("2 Aparelho ",aparelho,"==",principal_cel2)
+
 			if aparelho == principal_cel2:
 				driver.find_element_by_xpath('//*[@id="results-list"]/li[2]/div/a[2]').click()
 				getValueKimovil(aparelho, driver, celular)
@@ -65,24 +67,17 @@ class kimovil:
 			else:        
 				principal_cel3 = driver.find_element_by_xpath('//*[@id="results-list"]/li[3]/div/a[2]/div[2]/div[1]').text
 				principal_cel3 = principal_cel3.upper()
-				
+				print("3 Aparelho ",aparelho,"==",principal_cel3)
+
 			if aparelho == principal_cel3:
-				driver.find_element_by_xpath('//*[@id="results-list"]/li[3]/div/a[2]').click()
-				getValueKimovil(aparelho, driver, celular)
-				return celular
-			else:        
-				print("No 4")
-				principal_cel4 = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]').text
-				principal_cel4 = principal_cel4.upper()
-				
-			if aparelho == principal_cel4:        
-				driver.find_element_by_xpath('//*[@id="results-list"]/li[4]/div/a[2]').click()        
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[3]/div/a[2]/div[2]').click()
+				print("Caso 3")
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:        
 				principal_cel5 = driver.find_element_by_xpath('//*[@id="results-list"]/li[5]/div/a[2]/div[2]/div[1]').text
 				principal_cel5 = principal_cel5.upper()
-				print("Cheguei até aqui",principal_cel5)
+				print("5 Aparelho ",aparelho,"==",principal_cel5)  
 
 			if aparelho == principal_cel5:
 				print("Foi",principal_cel5)
@@ -91,85 +86,108 @@ class kimovil:
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
-				principal_cel6 = driver.find_element_by_xpath('//*[@id="results-list"]/li[6]/div/a[2]/div[2]/div[1]').text
+				principal_cel6 = driver.find_element_by_xpath('//*[@id="results-list"]/li[7]/div/a[2]/div[2]/div[1]').text
 				principal_cel6 = principal_cel6.upper()
+				print("6 Aparelho ",aparelho,"==",principal_cel6)
 
 			if aparelho == principal_cel6:
-				driver.find_element_by_xpath('//*[@id="results-list"]/li[6]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+				print("Click 6")
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[6]/div/a[2]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
-				principal_cel7 = driver.find_element_by_xpath('//*[@id="results-list"]/li[7]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel7 = driver.find_element_by_xpath('//*[@id="results-list"]/li[7]/div/a[2]/div[2]/div[1]').text
+				principal_cel7 = principal_cel7.upper()
+				print("7 Aparelho ",aparelho,"==",principal_cel7)
 
-			if aparelho == principal_cel7.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[7]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel7:
+				print("Click 7")
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[7]/div/a[2]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
-				principal_cel8 = driver.find_element_by_xpath('//*[@id="results-list"]/li[8]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel8 = driver.find_element_by_xpath('//*[@id="results-list"]/li[8]/div/a[2]/div[2]/div[1]').text
+				principal_cel8 = principal_cel8.upper()
+				print("8 Aparelho ",aparelho,"==",principal_cel8)
 
-			if aparelho == principal_cel8.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[8]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel8:
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[8]/div/a[2]/div[1]').click()
+				print("Click 8")
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
-				principal_cel9 = driver.find_element_by_xpath('//*[@id="results-list"]/li[9]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel9 = driver.find_element_by_xpath('//*[@id="results-list"]/li[9]/div/a[2]/div[2]/div[1]').text
+				principal_cel9 = principal_cel9.upper()
+				print("Caso 9", principal_cel9)
 
-			if aparelho == principal_cel9.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[9]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel9:
+				print("Click 9")
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[9]/div/a[2]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
-				principal_cel10 = driver.find_element_by_xpath('//*[@id="results-list"]/li[10]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel10 = driver.find_element_by_xpath('//*[@id="results-list"]/li[10]/div/a[2]/div[2]/div[1]').text
+				print("10 Aparelho ",aparelho,"==",principal_cel10)
 
-			if aparelho == principal_cel10.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[10]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel10:
+				print("Click 10")
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[10]/div/a[2]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
-				principal_cel11 = driver.find_element_by_xpath('//*[@id="results-list"]/li[11]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel11 = driver.find_element_by_xpath('//*[@id="results-list"]/li[11]/div/a[2]/div[2]/div[1]').text
+				principal_cel11 = principal_cel11.upper()
+				print("11 Aparelho ",aparelho,"==",principal_cel11)
 
-			if aparelho == principal_cel11.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[11]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel11:
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[11]/div/a[2]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
 				principal_cel12 = driver.find_element_by_xpath('//*[@id="results-list"]/li[12]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel12 = principal_cel12.upper()
+				print("12 Aparelho ",aparelho,"==",principal_cel12)
 
-			if aparelho == principal_cel12.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[12]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel12:
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[12]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
 				principal_cel13 = driver.find_element_by_xpath('//*[@id="results-list"]/li[13]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel13 = principal_cel13.upper()
+				print("13 Aparelho ",aparelho,"==",principal_cel13)
 
-			if aparelho == principal_cel13.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[13]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel13:
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[13]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
 				principal_cel14 = driver.find_element_by_xpath('//*[@id="results-list"]/li[14]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel14 = principal_cel14.upper()
+				print("14 Aparelho ",aparelho,"==",principal_cel14)
 
-			if aparelho == principal_cel14.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[14]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel14:
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[14]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
 			else:
 				principal_cel15 = driver.find_element_by_xpath('//*[@id="results-list"]/li[15]/div[2]/a[2]/div[2]/div[1]/span[1]').text
+				principal_cel15 = principal_cel15.upper()
+				print("15 Aparelho ",aparelho,"==",principal_cel15)
 
-			if aparelho == principal_cel15.upper():
-				smartphone = driver.find_element_by_xpath('//*[@id="results-list"]/li[15]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
+			if aparelho == principal_cel15:
+				driver.find_element_by_xpath('//*[@id="results-list"]/li[15]/div[2]/a[2]/div[2]/div[1]/span[1]').click()
 				getValueKimovil(aparelho, driver, celular)
 				return celular
+			else:
+				return celular
 
+		
 		# Função para atribuição dos valores ao objeto celular
 		def getValueKimovil(aparelho, driver, celular):
 			try:
-				#print("Marca")
 				Marca = driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[5]/section[1]/div/dl[1]/dd[1]').text #Kimovil
-				#print(Marca)
 				temp_marca = Marca.split("\n")
-				#print(temp_marca[0])
 				celular.setMarca(temp_marca[0])
 			except Exception:
 				celular.setMarca('')
@@ -202,7 +220,7 @@ class kimovil:
 
 				celular.setRam(nova_Memoria_Ram)
 			except Exception:
-				celular.setRam('')
+				celular.setRam(None)
 
 			try:
 				Memoria_Armazenamento = driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[5]/section[3]/div[1]/dl[5]/dd[1]').text #Kimovil
@@ -284,9 +302,7 @@ class kimovil:
 				celular.setTela('')
 
 			try:
-				#print("Kimovil entrei no SO")
 				SO = driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[5]/section[8]/div/dl/dd').text #Kimovil
-				#print("SO",SO)
 				celular.setSo(SO.split(' ')[0])
 			except Exception:
 				celular.setSo('')
@@ -334,31 +350,34 @@ class kimovil:
 				celular.setDataLancamento('')
 
 			try:
-				Avaliacao_site = driver.find_element_by_xpath('//*[@id="sec-datasheet"]/li[1]/div/div[1]/div[2]/span').text #Kimovil
+				Avaliacao_site = driver.find_element_by_xpath('//*[@id="sec-datasheet"]/li[1]/a/div[1]/div[2]').text #Kimovil
 				#print("AV Site",Avaliacao_site)
-				if Avaliacao_site.find('Não preço')>-1:
-					celular.setAvaliacaoSite('')
-
-				celular.setAvaliacaoSite(Avaliacao_site)
+				if Avaliacao_site.find('Não')>-1:
+					celular.setAvaliacaoSite(None)
+				else:
+					celular.setAvaliacaoSite(Avaliacao_site)
 			except Exception:
-				celular.setAvaliacaoSite('')
+				celular.setAvaliacaoSite(None)
 
 			try:        
 				Avaliacao_Usuario = driver.find_element_by_xpath('//*[@id="sec-datasheet"]/li[2]/div/a/div[2]/div').text #Kimovil
+				if Avaliacao_Usuario.find('Não')>-1:
+					celular.setAvaliacaoSite(None)
+				else:
 				#print("AV USU",Avaliacao_Usuario)
-				celular.setAvaliacaoUsu(Avaliacao_Usuario)
+					celular.setAvaliacaoUsu(Avaliacao_Usuario)
 			except Exception:
-				celular.setAvaliacaoUsu('')
+				celular.setAvaliacaoUsu(None)
 
 			return celular
-			try:
+			""" try:
 				print("Antes do Preco kimovil")
 				#driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[1]/div/button[1]/div[1]').click()
 				preco = driver.find_element_by_xpath('//*[@id="margin"]/div[2]/div/div[1]/div/button[1]/div[2]').text #Kimovil
 				print("Preco kimovil",preco)
 				celular.setPreco(preco)
 			except Exception:
-				celular.setPreco('')
+				celular.setPreco('') """
 
 		def padraoData(data):
 			mes = data.split(' ')
@@ -403,17 +422,19 @@ class kimovil:
 		# Fim das funções!
 	
 		pesquisa = driver.find_element_by_xpath('//*[@id="js_global-search-input"]')
+		print("k Ok1")
 		pesquisa.send_keys(self.aparelho)
+		print("k Ok2")
 		pesquisa.send_keys(Keys.ENTER)
-		#WebDriverWait(driver, 3)
+		print("k Ok3")
 		escolhe(self.aparelho, driver, celular, link)
 
-		print("Indo chamar o zoom")
-		preço = Zoom.zoom(self.aparelho)
-		teste = preço.preçoZoom()
-		print("Preço Kimovil->",teste)
-		celular.setPreco(teste)
-
+		#print("Indo chamar o zoom")
+		#preço = Zoom.zoom(self.aparelho)
+		#teste = preço.preçoZoom()
+		#print("Preço do Zoom->",teste)
+		#celular.setPreco(teste)
+		celular.setPreco(None)
 		driver.close()
 
 		return celular

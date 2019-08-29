@@ -1,4 +1,5 @@
 import selenium
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -18,6 +19,7 @@ class zoom:
 		# Abrindo o navegador para realização da pesquisa do smartphone
 		driver = webdriver.Chrome('/home/wandella/Documentos/CrawMobi/CrawMobi-master/chromedriver')
 		driver.get(link_preço)
+		WebDriverWait(driver, 3)
 		
 
 		#Funções utilizadas na execução
@@ -33,15 +35,16 @@ class zoom:
 		# As funções a seguir escolhem o modal correto dentro do site Zoom a partir do nome do aparelho
 
 		def escolheCard(aparelho, driver): # Comparação do nome para escolha correta, do card, no site Zoom
+			
 			print("Função de escolher o card -> ",aparelho)
+			
 			pesquisado1 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[1]/div[2]/h2/a').text
 			print("Celular pesquisado ->",pesquisado1)
 			pesquisado1 = pesquisado1.upper()
-
+			print("Pesquisado",pesquisado1,"aparelho",aparelho)
+			
 			if pesquisado1.find(aparelho)>-1:
-				print("zoom Achei 1",pesquisado1)
 				#driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[1]/div[2]').click()
-				print("Preço")
 				#Preço = driver.find_element_by_xpath('//*[@id="productInfo"]/div/div[2]/p/span[2]/a/strong').text #Kimovil
 				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[1]/div[3]/span[2]/a[1]').text #Kimovil
 				print(Preço)
@@ -50,53 +53,59 @@ class zoom:
 			else:
 				pesquisado2 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[2]/div[2]/h2/a').text
 				pesquisado2 = pesquisado2.upper()
-				print("zomm aparelho",pesquisado2)
-
+				
 			if pesquisado2.find(aparelho)>-1:
-				print("zoom Achei 2",pesquisado2)
-				print("Preço")
 				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[2]/div[3]/span[2]/a[1]').text #Kimovil
-				print(Preço)
 				return Preço
 			else:
 				pesquisado3 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[2]/h2').text
 				pesquisado3 = pesquisado3.upper()
-				print("zomm aparelho",pesquisado2)
 
 			if pesquisado3.find(aparelho)>-1:
-				print("zoom Achei 3",pesquisado3)
-				print("Preço")
 				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[3]/span[2]/a[1]').text #Kimovil
-				print(Preço)
 				return Preço
 			else:
 				pesquisado4 = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[2]/h2').text
 				pesquisado4 = pesquisado3.upper()
-				print("zomm aparelho",pesquisado4)
 
 			if pesquisado4.find(aparelho)>-1:
-				print("zoom Achei 4",pesquisado4)
-				print("Preço")
 				Preço = driver.find_element_by_xpath('//*[@id="storeFrontList"]/li[3]/div[3]/span[2]/a[1]').text #Kimovil
-				print(Preço)
 				return Preço
+			elif Preço == '':
+				print("Ultimo Caso",Preço)
+				Preço = driver.find_element_by_xpath('//*[@id="productInfo"]/div/div[2]/p/span[2]/a/strong/text()').text #Kimovil
+				return Preço
+			else:
+				return None
 			
 		# Função que complementa a função escolheCard(), vendo de qual marca é o aparelho para comparação
 		def completaEscolheCard(aparelho):
 			print("Zoom completando card")
+			if aparelho.find("(")>-1:
+				aparelho = aparelho.split("(")[0]
+
+			if aparelho.find("+")>-1:
+				aparelho = aparelho.replace("+"," PLUS")
+
 			if aparelho.find('APPLE')>-1:
 				var = aparelho.replace("APPLE", "")
 				return var
+
 			elif aparelho.find('MOTOROLA')>-1:
-				print("Caso Motorola")
 				var = aparelho.replace("MOTOROLA", "")
-				var = var.replace("MOTO", "MOTO G")
-				print(var)
+				var = var.replace("MOTO G", "MOTO G G")
+				var = var.replace("MOTO Z", "MOTO Z Z")
+				var = var.replace("ONE","MOTOROLAONE")
+				return var
+			elif aparelho.find('SAMSUNG')>-1:
+				var = var.replace("SAMSUNG", "")
 				return var
 			else:
 				return aparelho
 				
-			
+			""" elif aparelho.find('XIAOMI')>-1:
+				var = aparelho.replace("XIAOMI", "")
+				return var """
 			""" if (aparelho.split(' ')[0] == 'MOTOROLA'):
 				if ((len(pesquisado) - (len(aparelho)+11+5+7+2)) < 2):
 					return True
@@ -111,21 +120,24 @@ class zoom:
 			
 			return True """
 		# Fim das funções!
-					
-		print("Cheguei até aqui no try")
-		try:
-			print("Vou pesquisar o celular")
-			self.aparelho = completaEscolheCard(self.aparelho)	
+
+		print("OK1")	
+		self.aparelho = completaEscolheCard(self.aparelho)
+		try:	
 			pesquisa = driver.find_element_by_xpath('//*[@id="header"]/div/div[2]/div/form/div[1]/div/input')
+			
+			print("OK2")
 			pesquisa.send_keys(self.aparelho)
+			print("OK3")
 			pesquisa.send_keys(Keys.ENTER)
-			print("Indo escolher o card",self.aparelho)
+			print("OK4")
+			print("Enter nas chaves",self.aparelho)
+		
 			preço = escolheCard(self.aparelho, driver)
-			print("Terminei o card")
 			preço = precoFinal(preço)
-			print("Confere retorno do preço->",preço)
 		except Exception:
-			preço = ''
+			preço = None
+
 
 		if (preço is None) | (preço == ''):
 			log = open('logs.txt', 'a')
